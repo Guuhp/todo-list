@@ -14,7 +14,7 @@ function App() {
 
   function addTask(): void {
     if (task === "") {
-      toast.error("Digite Alguma Task");
+      toast.error("Digite Alguma Tarefa");
     } else {
       const idRandom = (num: number) => Math.floor(Math.random() * num);
 
@@ -23,13 +23,13 @@ function App() {
       const newTask = { id: idRandom(9999999999999999999), nameTask: task };
       setTodoList([...todoList, newTask]); //armazena as novas task ecom as antigas
 
-      toast.success("Task cadastrada com sucesso");
+      toast.success("Tarefa cadastrada com sucesso");
     }
   }
 
   function deleteTask(DeleteTaskById: number) {
     setTodoList(todoList.filter((taskName) => taskName.id !== DeleteTaskById));
-	toast.success("task deletada com sucesso");
+	toast.success("Tarefa deletada com sucesso");
   }
 
   return (
@@ -53,7 +53,7 @@ function App() {
         />
 
         <button type="submit" className="btn-header" onClick={addTask}>
-          Adicionar Task
+          Adicionar Tarefa
         </button>
       </header>
 
